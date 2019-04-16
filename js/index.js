@@ -57,6 +57,6 @@ function getQueryString(name) {
 window.onload = function(){
 	var domain = getQueryString("domain");
 	if(domain){
-		$(".card-shine").innerHTML = domain;
+		$(".card-shine").append(domain);
 	}
 }
