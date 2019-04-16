@@ -44,3 +44,19 @@ $(document).mousemove(function(event) {
 	$cardSubtitle.css({"transform": "translateX(" + ((mouseFromCenter.x / 25) * 0.5) + "px) translateY(" + ((mouseFromCenter.y / 25) * 1.15) + "px) translateZ(60px)"
 	});
 });
+
+function getQueryString(name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return unescape(r[2]);
+    }
+    return null;
+}
+
+window.onload = function(){
+	var domain = getQueryString("domain");
+	if(domain){
+		$(".card-shine").innerHTML = domain;
+	}
+}
